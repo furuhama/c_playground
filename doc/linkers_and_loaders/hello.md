@@ -3,7 +3,7 @@
 ### nm
 
 ```
-$ nm bin/linkers_and_loaders/hello
+$ nm src/linkers_and_loaders/hello
 0000000100000000 T __mh_execute_header
 0000000100000f6b T _main
                  U _puts
@@ -13,7 +13,7 @@ $ nm bin/linkers_and_loaders/hello
 ### objdump
 
 ```
-$ objdump -p bin/linkers_and_loaders/hello
+$ objdump -p src/linkers_and_loaders/hello
 
 hello:	file format Mach-O 64-bit x86-64
 
