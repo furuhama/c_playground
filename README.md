@@ -22,4 +22,4 @@ Thread model: posix
 
 Just studying the c lnaguage and binary files.
 
-See [doc](/doc) directory for more info.
+All files are in `/src` directory, and markdown files are also in there, which contain my study logs and outputs.
