@@ -17,3 +17,9 @@ gcc version 8.2.0 (Homebrew GCC 8.2.0)
 Target: x86_64-apple-darwin17.7.0
 Thread model: posix
 ```
+
+### Purpose
+
+Just studying the c lnaguage and binary files.
+
+See [doc](/doc) directory for more info.
