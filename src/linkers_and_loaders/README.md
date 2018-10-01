@@ -1,5 +1,7 @@
 ## Analyze simple binary file
 
+Compile `hello.c`
+
 ### nm
 
 ```
@@ -246,4 +248,27 @@ Load command 15
   cmdsize 16
   dataoff 8296
  datasize 0
+```
+
+Compile `value_definitions.c` and create object file (compile with `-c` option)
+
+### nm
+
+`nm` command searches a symbol table in the target file.
+
+```
+$ nm src/linkers_and_loaders/value_definitions.o
+0000000000000038 s EH_frame1
+0000000000000001 C _c0
+0000000000000010 D _c1
+0000000000000004 C _ci0
+0000000000000034 S _ci1
+0000000000000008 C _cp0
+0000000000000018 D _cp1
+0000000000000000 T _fn
+0000000000000004 C _i0
+0000000000000020 D _i1
+0000000000000088 s _si0
+0000000000000024 d _si1
+0000000000000028 s lC0
 ```
