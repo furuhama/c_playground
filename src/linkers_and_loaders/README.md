@@ -272,3 +272,30 @@ $ nm src/linkers_and_loaders/value_definitions.o
 0000000000000024 d _si1
 0000000000000028 s lC0
 ```
+
+Compile `exec_values.c` with `value_definitions.o`
+
+`$ gcc-8 src/linkers_and_loaders/exec_values.c src/linkers_and_loaders/value_definitions.o -o src/linkers_and_loaders/exec_values`
+
+### nm
+
+```
+$ nm src/linkers_and_loaders/exec_values
+0000000100000000 T __mh_execute_header
+0000000100001048 S _c0
+0000000100001020 D _c1
+000000010000104c S _ci0
+0000000100000f64 S _ci1
+0000000100001050 S _cp0
+0000000100001028 D _cp1
+                 U _exit
+0000000100000e40 T _fn
+0000000100001058 S _i0
+000000010000103c D _i1
+0000000100000ce9 T _main
+                 U _printf
+0000000100001044 s _si0
+0000000100001040 d _si1
+0000000100001030 D _str
+                 U dyld_stub_binder
+```
