@@ -6,6 +6,8 @@ char c1 = 'x';
 char *cp0;
 char *cp1 = "sample char";
 
+char str[] = "sample str";
+
 // int variables
 
 int i0;
