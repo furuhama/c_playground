@@ -346,11 +346,19 @@ Because, it is just for link step and no longer needed.
 
 `$ strip src/linkers_and_loaders/exec_values_without_symbol_table`
 
+Try `ls -l` command,
+
+the size of that does not have a symbol table is
+
+lower than that with a symbol table.
+
 ```
 $ ls -l src/linkers_and_loaders{exec_values,exec_values_without_symbol_table}
 -rwxr-xr-x 1 furuhama 8832 10  8 16:37 src/linkers_and_loaders/exec_values
 -rwxr-xr-x 1 furuhama 8592 10  8 17:33 src/linkers_and_loaders/exec_values_without_symbol_table
 ```
+
+With `nm` command, you can know the table was deleted.
 
 ```
 $ nm src/linkers_and_loaders/exec_values_without_symbol_table
