@@ -1,8 +1,8 @@
 ## Analyze simple binary file
 
-Compile `hello.c`
+### Compile `hello.c`
 
-### nm
+#### nm
 
 ```
 $ nm src/linkers_and_loaders/hello
@@ -12,7 +12,7 @@ $ nm src/linkers_and_loaders/hello
                  U dyld_stub_binder
 ```
 
-### objdump
+#### objdump
 
 ```
 $ objdump -p src/linkers_and_loaders/hello
@@ -250,9 +250,9 @@ Load command 15
  datasize 0
 ```
 
-Compile `value_definitions.c` and create object file (compile with `-c` option)
+### Compile `value_definitions.c` and create object file (compile with `-c` option)
 
-### nm
+#### nm
 
 `nm` command searches a symbol table in the target file.
 
@@ -273,11 +273,11 @@ $ nm src/linkers_and_loaders/value_definitions.o
 0000000000000028 s lC0
 ```
 
-Compile `exec_values.c` with `value_definitions.o`
+### Compile `exec_values.c` with `value_definitions.o`
 
 `$ gcc-8 src/linkers_and_loaders/exec_values.c src/linkers_and_loaders/value_definitions.o -o src/linkers_and_loaders/exec_values`
 
-### nm
+#### nm
 
 ```
 $ nm src/linkers_and_loaders/exec_values
