@@ -4,6 +4,14 @@
 
 #### nm
 
+`nm` command shows us a symbol table.
+
+Symbol table has the pairs of a symbol-name and a memory location address.
+
+And if you want to know more details in this output,
+
+you should use `info nm` or `man nm` commands.
+
 ```
 $ nm src/linkers_and_loaders/hello
 0000000100000000 T __mh_execute_header
@@ -276,6 +284,10 @@ $ nm src/linkers_and_loaders/value_definitions.o
 ### Compile `exec_values.c` with `value_definitions.o`
 
 `$ gcc-8 src/linkers_and_loaders/exec_values.c src/linkers_and_loaders/value_definitions.o -o src/linkers_and_loaders/exec_values`
+
+After compile and link step, the binary file even has its symbol table.
+
+And you can see the table with `nm` command.
 
 #### nm
 
