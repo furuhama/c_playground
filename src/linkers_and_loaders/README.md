@@ -333,3 +333,29 @@ Idx Name          Size      Address          Type
   9 __bss2        00000004 0000000100001044 BSS
  10 __common      00000014 0000000100001048 BSS
  ```
+
+### Strip the symbol table
+
+After create binary executable file,
+
+you can remove the symbol table.
+
+Because, it is just for link step and no longer needed.
+
+`$ gcc-8 gcc-8 src/linkers_and_loaders/exec_values.c src/linkers_and_loaders/value_definitions.o -o src/linkers_and_loaders/exec_values_without_symbol_table`
+
+`$ strip src/linkers_and_loaders/exec_values_without_symbol_table`
+
+```
+$ ls -l src/linkers_and_loaders{exec_values,exec_values_without_symbol_table}
+-rwxr-xr-x 1 furuhama 8832 10  8 16:37 src/linkers_and_loaders/exec_values
+-rwxr-xr-x 1 furuhama 8592 10  8 17:33 src/linkers_and_loaders/exec_values_without_symbol_table
+```
+
+```
+$ nm src/linkers_and_loaders/exec_values_without_symbol_table
+0000000100000000 T __mh_execute_header
+                 U _exit
+                 U _printf
+                 U dyld_stub_binder
+```
