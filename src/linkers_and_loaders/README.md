@@ -311,3 +311,25 @@ $ nm src/linkers_and_loaders/exec_values
 0000000100001030 D _str
                  U dyld_stub_binder
 ```
+
+#### objdump -h
+
+```
+$ objdump -h src/linkers_and_loaders/exec_values
+
+src/linkers_and_loaders/exec_values:	file format Mach-O 64-bit x86-64
+
+Sections:
+Idx Name          Size      Address          Type
+  0 __text        00000167 0000000100000ce9 TEXT
+  1 __stubs       0000000c 0000000100000e50 TEXT
+  2 __stub_helper 00000024 0000000100000e5c TEXT
+  3 __cstring     000000e1 0000000100000e80 DATA
+  4 __const       00000004 0000000100000f64 DATA
+  5 __eh_frame    00000098 0000000100000f68 DATA
+  6 __nl_symbol_ptr 00000010 0000000100001000 DATA
+  7 __la_symbol_ptr 00000010 0000000100001010 DATA
+  8 __data        00000024 0000000100001020 DATA
+  9 __bss2        00000004 0000000100001044 BSS
+ 10 __common      00000014 0000000100001048 BSS
+ ```
