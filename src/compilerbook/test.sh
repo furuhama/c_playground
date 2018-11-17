@@ -10,7 +10,8 @@ try() {
   actual="$?"
 
   if [ "$actual" != "$expected" ]; then
-    echo "$expected expected with input $input, but got $actual"
+    echo -e "expected: $expected\tinput: '$input'"
+    echo "but got:  $actual"
     exit 1
   fi
 }
@@ -20,5 +21,8 @@ try 42 42
 
 try '5-5+10-10' 0
 try '20+31-9' 42
+
+try '20 + 31   - 9' 42
+try '  1 + 2 + 4 - 2' 5
 
 echo OK
