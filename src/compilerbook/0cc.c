@@ -77,11 +77,13 @@ noreturn void error(char*, char*);
 void tokenize(char *p) {
     int i = 0;
     while (*p) {
+        // Trim spaces
         if (isspace(*p)) {
             p++;
             continue;
         }
 
+        // Tokenize operators
         if (*p == '+' || *p == '-' || *p == '*' || *p == '/' || *p == '(' || *p == ')') {
             tokens[i].type = *p;
             tokens[i].input = p;
@@ -90,6 +92,7 @@ void tokenize(char *p) {
             continue;
         }
 
+        // Tokenize digits
         if (isdigit(*p)) {
             tokens[i].type = TK_NUM;
             tokens[i].input = p;
