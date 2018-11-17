@@ -36,3 +36,67 @@ _main:
         mov rax, 42
         ret
 ```
+
+Try simple function.
+
+test3.c
+
+```c
+int plus(int x, int y) {
+    return x + y;
+}
+
+int main() {
+    return plus(20, 22);
+}
+```
+
+Objdump this
+
+```
+$ gcc test3.c -o test3
+$ objdump -d -M intel ./test3
+
+./test3:     ファイル形式 mach-o-x86-64
+
+
+セクション .text の逆アセンブル:
+
+0000000100000f4f <_plus>:
+   100000f4f:   55                      push   rbp
+   100000f50:   48 89 e5                mov    rbp,rsp
+   100000f53:   89 7d fc                mov    DWORD PTR [rbp-0x4],edi
+   100000f56:   89 75 f8                mov    DWORD PTR [rbp-0x8],esi
+   100000f59:   8b 55 fc                mov    edx,DWORD PTR [rbp-0x4]
+   100000f5c:   8b 45 f8                mov    eax,DWORD PTR [rbp-0x8]
+   100000f5f:   01 d0                   add    eax,edx
+   100000f61:   5d                      pop    rbp
+   100000f62:   c3                      ret
+
+0000000100000f63 <_main>:
+   100000f63:   55                      push   rbp
+   100000f64:   48 89 e5                mov    rbp,rsp
+   100000f67:   be 16 00 00 00          mov    esi,0x16
+   100000f6c:   bf 14 00 00 00          mov    edi,0x14
+   100000f71:   e8 d9 ff ff ff          call   100000f4f <_plus>
+   100000f76:   5d                      pop    rbp
+   100000f77:   c3                      ret
+```
+
+Write assembly equal to `test3.c`
+
+```
+.intel_syntax noprefix
+.global plus, _main
+
+plus:
+        add rsi, rdi
+        mov rax, rsi
+        ret
+
+_main:
+        mov rdi, 20
+        mov rsi, 22
+        call plus
+        ret
+```
