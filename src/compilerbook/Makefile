@@ -5,4 +5,4 @@ test: 0cc
 		./test.sh
 
 clean:
-		rm -f 0cc tmp
+		rm -f 0cc tmp*
