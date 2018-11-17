@@ -112,9 +112,15 @@ On the other hand, if one has `e` prefix, it means 32-bit register.
 
 If a register name is like `r?x`(? filled with `a`, `b`, `c` or `d`), it is called `General Purpose Register`.
 
-Registers named `rsi` or `rdi` are called `Index Registers`.
-`rsi` is specially called `Source Index for string operations`,
-and `rdi` is specially called `Destination Index for string operations`.
+- `rax` is `Accumlator`
+- `rbx` is `Base index`: used for arrays
+- `rcx` is `Counter`: used for loops and strings
+- `rdx` is used to `extend the precision of the accumlator`
+
+Registers named `rsi` or `rdi` are called `Index Registers`:
+
+- `rsi` is specially called `Source Index for string operations`
+- `rdi` is specially called `Destination Index for string operations`
 
 When to compile a C function to an assembly, the first argument should be passed on to `rdi`, and the second argument to `rsi`.
 
