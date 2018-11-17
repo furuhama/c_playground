@@ -103,7 +103,9 @@ _main:
 
 ### Register name
 
-`rax`, `rsi`, `rdi`: 64-bit register
+`rax`, `rsi`, `rdi`: 64-bit register names
+
+-
 
 If a register name has `r` prefix, it means 64-bit register.
 On the other hand, if one has `e` prefix, it means 32-bit register.
@@ -114,7 +116,11 @@ Registers named `rsi` or `rdi` are called `Index Registers`.
 `RSI` is specially called `Source Index for string operations`,
 and `RDI` is specially called `Destination Index for string operations`.
 
+When to compile a C function to an assembly, the first argument should be passed on to `rdi`, and the second argument to `rsi`.
+
 References:
 
 - https://en.wikipedia.org/wiki/X86#64-bit
 - https://en.wikipedia.org/wiki/X86#Structure
+
+-
