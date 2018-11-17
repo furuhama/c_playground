@@ -1,3 +1,18 @@
+/*
+ * 0cc
+ *
+ * Compile process:
+ *
+ * 1. Tokenize input string
+ *    (Trim extra spaces, Set type & value for each tokens)
+ *
+ * 2. Create Abstract Syntax Tree (= AST)
+ *    (Create nodes by syntax rules)
+ *
+ * 3. Generate assembly codes by consuming AST
+ *
+ */
+
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
