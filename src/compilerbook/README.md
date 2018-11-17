@@ -100,3 +100,19 @@ _main:
         call plus
         ret
 ```
+
+### Register name
+
+`rax`, `rsi`, `rdi`: 64-bit register
+
+If a register name has `r` prefix, it means 64-bit register.
+On the other hand, if one has `e` prefix, it means 32-bit register.
+
+If a register name is like `r?x`(? filled with `A`, `B`, `C` or `D`), it is called `General Purpose Register`.
+
+Registers named `rsi` or `rdi` are called `Index Registers`. `RSI` is specially called `Source Index for string operations`, and `RDI` is specially called `Destination Index for string operations`.
+
+References:
+
+- https://en.wikipedia.org/wiki/X86#64-bit
+- https://en.wikipedia.org/wiki/X86#Structure
