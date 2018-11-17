@@ -103,7 +103,7 @@ _main:
 
 ### Register name
 
-`rax`, `rsi`, `rdi`: 64-bit register names
+`rax`, `rsi`, `rdi`, `rsp`, `rbp`: 64-bit register names
 
 -
 
@@ -123,6 +123,9 @@ Registers named `rsi` or `rdi` are called `Index Registers`:
 - `rdi` is specially called `Destination Index for string operations`
 
 When to compile a C function to an assembly, the first argument should be passed on to `rdi`, and the second argument to `rsi`.
+
+- `rsp` is `Stack pointer for the stack top address`
+- `rbp` is `Stack base pointer to hold the current stack frame`
 
 References:
 
