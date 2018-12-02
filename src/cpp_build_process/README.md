@@ -47,4 +47,37 @@ $ gcc-8 -H -O0 -std=c99 -g -c -o simple.o simple.c
 . add.h
 ```
 
+#### objdump
 
+After that, `objdump` it.
+
+```
+$ objdump -d -r simple.o
+
+simple.o:       file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+_main:
+       0:       55      pushq   %rbp
+       1:       48 89 e5        movq    %rsp, %rbp
+       4:       48 83 ec 10     subq    $16, %rsp
+       8:       89 7d fc        movl    %edi, -4(%rbp)
+       b:       48 89 75 f0     movq    %rsi, -16(%rbp)
+       f:       be 06 00 00 00  movl    $6, %esi
+      14:       bf 05 00 00 00  movl    $5, %edi
+      19:       e8 00 00 00 00  callq   0 <_main+0x1e>
+                000000000000001a:  X86_64_RELOC_BRANCH  _add
+      1e:       be 06 00 00 00  movl    $6, %esi
+      23:       89 c7   movl    %eax, %edi
+      25:       e8 00 00 00 00  callq   0 <_main+0x2a>
+                0000000000000026:  X86_64_RELOC_BRANCH  _sub
+      2a:       89 c6   movl    %eax, %esi
+      2c:       48 8d 3d 00 00 00 00    leaq    (%rip), %rdi
+                000000000000002f:  X86_64_RELOC_SIGNED  lC0
+      33:       b8 00 00 00 00  movl    $0, %eax
+      38:       e8 00 00 00 00  callq   0 <_main+0x3d>
+                0000000000000039:  X86_64_RELOC_BRANCH  _printf
+      3d:       b8 00 00 00 00  movl    $0, %eax
+      42:       c9      leave
+      43:       c3      retq
+```
