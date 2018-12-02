@@ -81,3 +81,22 @@ _main:
       42:       c9      leave
       43:       c3      retq
 ```
+
+#### Symbol tables
+
+See symbol tables in object file (named as `*.o`)
+
+```
+$ cat add.sym
+00000000000000a0 s EH_frame1
+0000000000000000 T _add
+0000000000000014 T _sub
+
+$ cat simple.sym
+0000000000000090 s EH_frame1
+                 U _add
+0000000000000000 T _main
+                 U _printf
+                 U _sub
+0000000000000044 s lC0
+```
