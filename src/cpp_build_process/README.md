@@ -131,3 +131,5 @@ $ nm mangling.o
 Why does C++ mangle function names on a symbol table?
 
 It is because the same name functions with different argument types are able to be defined in C++.
+
+And a mangling enables us to static dispatch with the same function names for any class instances.
