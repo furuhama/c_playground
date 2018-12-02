@@ -91,7 +91,9 @@ $ cat add.sym
 00000000000000a0 s EH_frame1
 0000000000000000 T _add
 0000000000000014 T _sub
+```
 
+```
 $ cat simple.sym
 0000000000000090 s EH_frame1
                  U _add
@@ -100,3 +102,32 @@ $ cat simple.sym
                  U _sub
 0000000000000044 s lC0
 ```
+
+### C++ build process
+
+Compared to C, C++ has `template` and `mangling`.
+
+`mangling` is to edit the name for symbol tables.
+
+Take a look at `mangling` system.
+
+Create `mangling.cpp` and compile it with C++ compiler (In my environment, it's `g++-8`).
+
+After that, `nm` it.
+
+```
+$ nm mangling.o
+
+0000000100000e43 T __Z3addPKiRS_
+0000000100000e5f T __Z3addff
+0000000100000e2f T __Z3addii
+0000000100000e79 T __ZN4manu3addEii
+0000000100000000 T __mh_execute_header
+0000000100000e1b T _add_c
+0000000100000e8d T _main
+                 U dyld_stub_binder
+```
+
+Why does C++ mangle function names on a symbol table?
+
+It is because the same name functions with different argument types are able to be defined in C++.
