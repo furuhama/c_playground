@@ -133,3 +133,18 @@ Why does C++ mangle function names on a symbol table?
 It is because the same name functions with different argument types are able to be defined in C++.
 
 And a mangling enables us to static dispatch with the same function names for any class instances.
+
+#### ldd
+
+`ldd` command displays libraries the target executable depends on.
+
+In Mac OSX, you would use `otool -L`.
+
+```
+$ otool -L mangling.o
+
+mangling.o:
+	/usr/local/opt/gcc/lib/gcc/8/libstdc++.6.dylib (compatibility version 7.0.0, current version 7.25.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.200.5)
+	/usr/local/lib/gcc/8/libgcc_s.1.dylib (compatibility version 1.0.0, current version 1.0.0)
+```
