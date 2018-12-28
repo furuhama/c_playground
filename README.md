@@ -27,5 +27,4 @@ All files are in `/src` directory, and markdown files are also in there, which c
 ### References
 
 - [リンカ・ローダ実践開発テクニック](http://kozos.jp/books/linker_book.html)
-- [低レイヤを知りたい人のためのCコンパイラ作成入門](https://www.sigbus.info/compilerbook/)
 - [The C++ Build Process Explained](https://github.com/green7ea/cpp-compilation)
