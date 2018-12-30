@@ -28,3 +28,4 @@ All files are in `/src` directory, and markdown files are also in there, which c
 
 - [リンカ・ローダ実践開発テクニック](http://kozos.jp/books/linker_book.html)
 - [The C++ Build Process Explained](https://github.com/green7ea/cpp-compilation)
+- [Write your Own Virtual Machine](https://justinmeiners.github.io/lc3-vm/)
