@@ -77,14 +77,12 @@ enum
     TRAP_HALT = 0x25   /* halt the program */
 };
 
-
 /* Memory Storage */
 /* 65536 locations */
 uint16_t memory[UINT16_MAX];
 
 /* Register Storage */
 uint16_t reg[R_COUNT];
-
 
 /* Functions */
 /* Sign Extend */
@@ -210,8 +208,6 @@ void handle_interrupt(int signal)
     exit(-2);
 }
 
-
-
 /* Main Loop */
 
 int main(int argc, const char* argv[])
@@ -223,7 +219,7 @@ int main(int argc, const char* argv[])
         printf("lc3 [image-file1] ...\n");
         exit(2);
     }
-    
+
     for (int j = 1; j < argc; ++j)
     {
         if (!read_image(argv[j]))
@@ -261,7 +257,7 @@ int main(int argc, const char* argv[])
                     uint16_t r1 = (instr >> 6) & 0x7;
                     /* whether we are in immediate mode */
                     uint16_t imm_flag = (instr >> 5) & 0x1;
-                
+
                     if (imm_flag)
                     {
                         uint16_t imm5 = sign_extend(instr & 0x1F, 5);
@@ -272,7 +268,7 @@ int main(int argc, const char* argv[])
                         uint16_t r2 = instr & 0x7;
                         reg[r0] = reg[r1] + reg[r2];
                     }
-                
+
                     update_flags(r0);
                 }
 
@@ -283,7 +279,7 @@ int main(int argc, const char* argv[])
                     uint16_t r0 = (instr >> 9) & 0x7;
                     uint16_t r1 = (instr >> 6) & 0x7;
                     uint16_t imm_flag = (instr >> 5) & 0x1;
-                
+
                     if (imm_flag)
                     {
                         uint16_t imm5 = sign_extend(instr & 0x1F, 5);
@@ -303,7 +299,7 @@ int main(int argc, const char* argv[])
                 {
                     uint16_t r0 = (instr >> 9) & 0x7;
                     uint16_t r1 = (instr >> 6) & 0x7;
-                
+
                     reg[r0] = ~reg[r1];
                     update_flags(r0);
                 }
@@ -336,7 +332,7 @@ int main(int argc, const char* argv[])
                     uint16_t r1 = (instr >> 6) & 0x7;
                     uint16_t long_pc_offset = sign_extend(instr & 0x7ff, 11);
                     uint16_t long_flag = (instr >> 11) & 1;
-                
+
                     reg[R_R7] = reg[R_PC];
                     if (long_flag)
                     {
@@ -498,7 +494,4 @@ int main(int argc, const char* argv[])
     }
     /* Shutdown */
     restore_input_buffering();
-
 }
-
-
