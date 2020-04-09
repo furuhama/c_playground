@@ -1,6 +1,14 @@
 ## C playground
 
+### Purpose
+
+Just studying the c lnaguage and binary files.
+
+All files are in `/src` directory, and markdown files are also in there, which contain my study logs and outputs.
+
 ### Compiler
+
+#### on local machine
 
 clang:
 
@@ -18,11 +26,30 @@ Target: x86_64-apple-darwin17.7.0
 Thread model: posix
 ```
 
-### Purpose
+#### on docker image
 
-Just studying the c lnaguage and binary files.
+clang:
 
-All files are in `/src` directory, and markdown files are also in there, which contain my study logs and outputs.
+```
+clang version 9.0.0-2~ubuntu18.04.2 (tags/RELEASE_900/final)
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+```
+
+gcc:
+
+```
+gcc version 8.4.0 (Ubuntu 8.4.0-1ubuntu1~18.04)
+Target: x86_64-linux-gnu
+Thread model: posix
+```
+
+### Docker usage
+
+```
+$ docker build -t c_playground .
+$ docker run -v $(pwd):/usr/src --rm -it c_playground bash
+```
 
 ### References
 
