@@ -51,6 +51,13 @@ $ docker build -t c_playground .
 $ docker run -v $(pwd):/usr/src --rm -it c_playground bash
 ```
 
+### Makefile usage
+
+```
+$ make once SRC=sample.c
+$ make once SRC=another.c CC=clang
+```
+
 ### References
 
 - [リンカ・ローダ実践開発テクニック](http://kozos.jp/books/linker_book.html)
