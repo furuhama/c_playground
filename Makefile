@@ -1,4 +1,5 @@
 CC = gcc
+CFLAGS=-Wall -std=c11
 TARGET = a.out
 
 once: $(SRC)
