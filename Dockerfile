@@ -6,6 +6,7 @@ ARG GCC=gcc-8
 ARG CLANG=clang-9
 
 RUN apt-get update && apt-get install -y \
+  make \
   $GCC \
   $CLANG
 
