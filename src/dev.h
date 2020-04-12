@@ -4,9 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void err_sys(const char *arg) {
-    perror(arg);
-    exit(1);
-}
+void error(const char *);
 
 #endif

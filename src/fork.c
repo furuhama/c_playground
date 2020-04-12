@@ -11,12 +11,12 @@ int main(void) {
     var = 88;
 
     if (write(STDOUT_FILENO, buf, sizeof(buf) - 1) != sizeof(buf) - 1)
-        err_sys("write error");
+        error("write error");
 
     printf("before fork\n");
 
     if ((pid = fork()) < 0) {
-        err_sys("fork error");
+        error("fork error");
     } else if (pid == 0) {
         globvar++;
         var++;
