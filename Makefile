@@ -3,7 +3,7 @@ TARGET = a.out
 
 once: $(SRC)
 	@$(CC) $(SRC) -o $(TARGET)
-	@./$(TARGET)
+	@./$(TARGET) || true
 	@make clean
 
 .PHONY: clean
