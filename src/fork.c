@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "dev.h"
+#include <unistd.h>
 
 int globvar = 42;
 char buf[] = "a write to stdout\n";
