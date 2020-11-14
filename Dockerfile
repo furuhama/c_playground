@@ -5,8 +5,9 @@ WORKDIR /usr/src
 ARG GCC=gcc-8
 ARG CLANG=clang-9
 
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
   make \
+  less \
   $GCC \
   $CLANG
 
