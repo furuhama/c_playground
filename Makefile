@@ -17,4 +17,4 @@ docker-build:
 
 .PHONY: docker-run
 docker-run:
-	docker run -v $(pwd):/usr/src --rm -it c_playground bash
+	-docker run -v $(CURDIR):/usr/src --rm -it c_playground bash
