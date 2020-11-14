@@ -1,6 +1,6 @@
-CC = gcc
+CC=gcc
 CFLAGS=-Wall -std=c11
-TARGET = a.out
+TARGET=a.out
 
 once: $(SRC)
 	@$(CC) $(SRC) -o $(TARGET)
