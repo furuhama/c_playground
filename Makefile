@@ -10,3 +10,11 @@ once: $(SRC)
 .PHONY: clean
 clean:
 	@$(RM) -f $(TARGET) *.o
+
+.PHONY: docker-build
+docker-build:
+	docker build -t c_playground .
+
+.PHONY: docker-run
+docker-run:
+	docker run -v $(pwd):/usr/src --rm -it c_playground bash

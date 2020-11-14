@@ -47,7 +47,12 @@ Thread model: posix
 ### Docker usage
 
 ```
+# build image
+# (You can also use `make docker-build`)
 $ docker build -t c_playground .
+
+# run container
+# (You can also use `make docker-run`)
 $ docker run -v $(pwd):/usr/src --rm -it c_playground bash
 ```
 
